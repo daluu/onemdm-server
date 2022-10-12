@@ -1,6 +1,117 @@
-# This repo is no longer maintained
+# NOTES
 
-# OneMDM Server 
+This repo is a fork of the original to attempt to build a docker image of the server.
+But we run into installation errors. Not sure what needs to be done to resolve
+the build issues. Maybe using the wrong Linxu or ruby version/environment.
+
+```
+> [7/9] RUN bundle install:                                                                                                                                                                                                       
+#11 1.174 Bundler 2.3.7 is running, but your lockfile was generated with 1.13.7. Installing Bundler 1.13.7 and restarting using that version.                                                                                      
+#11 5.221 Fetching gem metadata from https://rubygems.org/.                                                                                                                                                                        
+#11 5.418 Fetching bundler 1.13.7                                                                                                                                                                                                  
+#11 5.696 Installing bundler 1.13.7                                                                                                                                                                                                
+#11 7.577 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:26: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 7.578 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:105: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 7.579 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:105: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 7.629 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:26: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 7.630 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:105: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 7.630 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:105: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 7.815 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:26: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 7.815 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:26: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 7.815 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:35: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 8.055 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:26: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 8.055 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:35: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 8.055 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:26: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 8.055 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:26: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 8.055 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:35: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 8.394 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:105: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 8.710 Fetching gem metadata from https://rubygems.org/...........
+#11 12.91 Fetching version metadata from https://rubygems.org/...
+#11 17.19 Fetching dependency metadata from https://rubygems.org/..
+#11 17.47 Fetching https://github.com/activeadmin/activeadmin.git
+#11 17.47 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:105: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 22.50 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:105: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 22.50 /usr/local/bundle/gems/bundler-1.13.7/lib/bundler/shared_helpers.rb:105: warning: Pathname#untaint is deprecated and will be removed in Ruby 3.2.
+#11 25.40 Installing rake 10.4.2
+#11 25.79 Installing i18n 0.7.0
+#11 26.10 Installing json 1.8.3 with native extensions
+#11 29.27 Installing minitest 5.8.1
+#11 29.55 Installing thread_safe 0.3.5
+#11 29.84 Installing builder 3.2.2
+#11 30.13 Installing erubis 2.7.0
+#11 30.62 Installing mini_portile 0.6.2
+#11 30.87 Installing rack 1.6.4
+#11 31.30 Installing mime-types 2.6.2
+#11 31.70 Installing sass 3.4.19
+#11 32.18 Installing thor 0.19.1
+#11 32.44 Installing coffee-script-source 1.9.1.1
+#11 32.58 Installing execjs 2.6.0
+#11 32.75 Installing formtastic_i18n 0.6.0
+#11 32.89 Installing kaminari-core 1.0.0
+#11 33.07 Installing arel 6.0.3
+#11 33.33 Installing tilt 2.0.1
+#11 33.58 Installing bcrypt 3.1.10 with native extensions
+#11 45.59 Installing debug_inspector 0.0.2 with native extensions
+#11 46.49 Installing byebug 6.0.2 with native extensions
+#11 48.40 Installing docile 1.1.5
+#11 48.68 Installing simplecov-html 0.10.0
+#11 48.88 Installing orm_adapter 0.5.0
+#11 49.09 Installing diff-lcs 1.2.5
+#11 49.35 Installing multi_xml 0.5.5
+#11 49.57 Installing multi_json 1.11.2
+#11 50.56 Installing libv8 3.16.14.11
+#11 51.38 Installing newrelic_rpm 3.13.0.299
+#11 52.57 Installing pg 0.18.2 with native extensions
+#11 119.1 Using bundler 1.13.7
+#11 119.2 Installing ref 2.0.0
+#11 119.4 Installing rspec-support 3.3.0
+#11 119.6 Installing spring 1.4.0
+#11 119.8 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+#11 119.8
+#11 119.8     current directory: /usr/local/bundle/gems/json-1.8.3/ext/json/ext/generator
+#11 119.8 /usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 -r
+#11 119.8 ./siteconf20221012-8-jvnagc.rb extconf.rb
+#11 119.8 creating Makefile
+#11 119.8
+#11 119.8 current directory: /usr/local/bundle/gems/json-1.8.3/ext/json/ext/generator
+#11 119.8 make DESTDIR\= clean
+#11 119.8
+#11 119.8 current directory: /usr/local/bundle/gems/json-1.8.3/ext/json/ext/generator
+#11 119.8 make DESTDIR\=
+#11 119.8 compiling generator.c
+#11 119.8 generator.c: In function ‘generate_json’:
+#11 119.8 generator.c:861:25: error: ‘rb_cFixnum’ undeclared (first use in this function);
+#11 119.8 did you mean ‘mFixnum’?
+#11 119.8      } else if (klass == rb_cFixnum) {
+#11 119.8                          ^~~~~~~~~~
+#11 119.8                          mFixnum
+#11 119.8 generator.c:861:25: note: each undeclared identifier is reported only once for
+#11 119.8 each function it appears in
+#11 119.8 generator.c:863:25: error: ‘rb_cBignum’ undeclared (first use in this function);
+#11 119.8 did you mean ‘mBignum’?
+#11 119.8      } else if (klass == rb_cBignum) {
+#11 119.8                          ^~~~~~~~~~
+#11 119.8                          mBignum
+#11 119.8 generator.c: At top level:
+#11 119.8 cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+#11 119.8 cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+#11 119.8 cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+#11 119.8 make: *** [Makefile:246: generator.o] Error 1
+#11 119.8
+#11 119.8 make failed, exit code 2
+#11 119.8
+#11 119.8 Gem files will remain installed in /usr/local/bundle/gems/json-1.8.3 for
+#11 119.8 inspection.
+#11 119.8 Results logged to
+#11 119.8 /usr/local/bundle/extensions/x86_64-linux/3.1.0/json-1.8.3/gem_make.out
+#11 119.8
+#11 119.8 An error occurred while installing json (1.8.3), and Bundler cannot continue.
+#11 119.8 Make sure that `gem install json -v '1.8.3'` succeeds before bundling.
+------
+executor failed running [/bin/sh -c bundle install]: exit code: 5
+```
+
+# OneMDM Server
 
 ## Table of Contents
 
@@ -90,7 +201,7 @@ One MDM Client is the android application to run on the client device to communi
 Features which are currently available :
 
 * **Tracking Device Status**
- 
+
  Track online/offline status of the device in the admin console.
 
 * **Update OneMDM Client App**
